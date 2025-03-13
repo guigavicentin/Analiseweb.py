@@ -47,7 +47,7 @@ def run_command(command):
 
 def coletar_subdominios(alvo):
     run_command(f"shodanx subdomain -d {alvo} -o {alvo}_shodanx.txt")
-    run_command(f"python3 /home/guilherme/kali/subcat/subcat.py -d {alvo} -o {alvo}_subcat.txt")
+    run_command(f"python3 subcat.py -d {alvo} -o {alvo}_subcat.txt")
     run_command(f"amass enum -active -norecursive -noalts -d {alvo} -o {alvo}_amass.txt")
 
     with open(f"{alvo}_unicos.txt", "w") as out_file:
